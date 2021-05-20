@@ -1,0 +1,14 @@
+.invisible-class{
+    visibility: hidden;
+    
+    
+}
+
+.todo-class{
+    color: white;
+    background-color: #d9534f;
+}
+.done-class{
+    color: white;
+    background-color: #5cb85c;
+}
