@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group 1 first website</title>
+    <title>Task list form</title>
     <link rel="stylesheet" type ="text/css" href="./css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
 </head>
+
 <body>
-    <form class="needs-validation ml-5" id="form" novalidate>
-    <h1 style="text-align:center">Task List</h1>
+    <form id="form" class="needs-validation mx-5 my-3"  novalidate>
+    <button class="btn btn-primary btn-lg btn-block"><h1>Task List</h1></button>
     <div id="error" style="display: none" class="alert alert-warning alert-dismissible fade show" role="alert">
       
     </div>
    
-    <h2>Add New Task</h2>
+    <h2>Add New Task</h2> 
   <div class="form-row">
     <div class="col-md-6 mb-3" >
-      <label for="newTaskNameInput">Task Name</label>
-      <input type="text" class="form-control"  id="newTaskNameInput" required>
+      <label for="newTaskNameInput">Task Name<span style="color: red">*</span></label>
+      <input type="text" class="form-control"  id="newTaskNameInput" placeholder="Task Name" required>
       <div class="valid-feedback">
         Looks good!
       </div>
@@ -31,8 +31,8 @@
   </div>
   <div class="form-row">
     <div class="col-md-6 mb-3">
-      <label for="newTaskDescriptionInput">Task Description</label>
-      <textarea type="text" class="form-control" id="newTaskDescriptionInput" required></textarea>
+      <label for="newTaskDescriptionInput">Task Description<span style="color: red">*</span></label>
+      <textarea type="text" class="form-control" placeholder="Your answer here" id="newTaskDescriptionInput" required></textarea>
       <div class="valid-feedback">
         Looks good!
       </div>
@@ -43,8 +43,8 @@
   </div>
   <div class="form-row">
     <div class="col-md-6 mb-3">
-      <label for="newAssignedToInput">Assigned To</label>
-      <input type="text" class="form-control" id="newAssignedToInput" required>
+      <label for="newAssignedToInput">Assigned To<span style="color: red">*</span></label>
+      <input type="text" class="form-control" id="newAssignedToInput" placeholder="Assigned To" required>
       <div class="valid-feedback">
         Looks good!
       </div>
@@ -53,7 +53,7 @@
       </div>
     </div>
     <div class="col-md-3 mb-3">
-      <label for="newDueDateInput" >Due Date</label>
+      <label for="newDueDateInput" >Due Date<span style="color: red">*</span></label>
       <input type="date" class="form-control" id="newDueDateInput" required>
       <div class="valid-feedback">
         Looks good!
@@ -79,13 +79,11 @@
       <li class="list-group-item">Assigned To: </li>
       <li class="list-group-item">Due Date: </li>
     </ul>
-
 </div>
-
 </form>
 
-   <!-- <script>
-   // Example starter JavaScript for disabling form submissions if there are invalid fields
+<!-- <script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
   (function() {
     'use strict';
     window.addEventListener('load', function() {
@@ -103,8 +101,11 @@
       });
     }, false);
   })();
-  </script> -->
-  <script src="js/taskManager.js"></script>
-  <script src="js/index.js" ></script>
+  </script>  -->
+
+<script src="js/taskManager.js"></script>
+<script src="js/index.js" ></script>
+
+
 </body>
 </html>

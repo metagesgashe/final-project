@@ -2,15 +2,6 @@ let task = new TaskManager()
 task.load()
 task.render()
 
-//task.addTask('task 1', 'description 1', 'assigned to 1', 2021)
-//console.log(task.tasks)
-
-//task.addTask('task 2', 'description 2', 'assigned to 2', 2022)
-//console.log(task.tasks)
-
-
-
-
 const newTaskNameInput = document.getElementById('newTaskNameInput');
 const taskName = newTaskNameInput.value;
 
@@ -38,24 +29,12 @@ submit.addEventListener('click', function(e) {
     const description = newTaskDescription.value;
     const assigned = newAssignedToInput.value;
     const dueDate = newDueDateInput.value;
-    const tasksList = document.getElementById('tasksList');
-    
-
-    task.addTask(taskName, description, assigned, dueDate);
-    // console.log(task.tasks);
-    //console.log(task.tasks.length);
-    //console.log(task.tasks[0]['id']);
-    
-    task.save()
-    task.render();
-    
-
-   
+    const tasksList = document.getElementById('tasksList'); 
 
     let messages = []
     if (taskName === '' || description === '' || assigned === '' || dueDate === ''){
     
-        messages.push("<strong>Input required!</strong> You should file all the required fields before you proceed to the next step.");
+        messages.push("<strong>*Input required!</strong> You should fill all the required fields before you proceed to the next step.");
         
     }
    
@@ -65,6 +44,10 @@ submit.addEventListener('click', function(e) {
         errorMessage.style.display = 'block';
         tasksList.style.display = 'none';
     } else {
+        task.addTask(taskName, description, assigned, dueDate);
+        task.save()
+        task.render();
+
         errorMessage.style.display = 'none';
         tasksList.style.display = 'block';
         form.reset()
@@ -77,17 +60,12 @@ tasksList.addEventListener('click', (event) => {
     if (event.target.classList.contains('done-button')){
         const parentTask = event.target.parentElement;
         const taskId = parseInt(parentTask.dataset.taskId);
-        //const taskId = parseInt(parentTask.getAttribute('data-task-id'));
-        // the variable name in the walk through is task. we use taskCard
         const taskCard = task.getTaskById(taskId)
        
       
         taskCard.status = 'DONE';
         task.save()
         task.render();
-        //hide the button
-        // const button = document.querySelector('.done-button')
-        // button.style.display = 'none';
     }
     
 

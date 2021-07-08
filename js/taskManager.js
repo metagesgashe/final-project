@@ -6,7 +6,7 @@ const html =
   <button class="btn ${status === 'TODO'? 'todo-class': 'done-class'} float-right" style="width:35%">${status}</button>
 </div>
 <ul class="list-group list-group-flush">
-  <li class="list-group-item">${name}</li>
+  <li class="list-group-item"><strong>${name}</strong></li>
   <li class="list-group-item">Task Description: ${description}</li>
   <li class="list-group-item">Assigned To: ${assignedTo}</li>
   <li class="list-group-item">Due Date: ${dueDate}</li>
@@ -49,7 +49,7 @@ class TaskManager {
         let foundTask;
         for (let i = 0; i < this.tasks.length; i++){
             const task = this.tasks[i];
-            //console.log(task);
+            
             if (task.id === taskId){
                 foundTask = task;
                 return foundTask;
